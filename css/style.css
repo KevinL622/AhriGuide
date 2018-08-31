@@ -1,0 +1,163 @@
+body{
+  background-color: #F5F5DC;
+}
+
+#navbar {
+  display: block;
+  position: fixed;
+  overflow-y: auto;
+  height: 100%;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 1%;
+  width: 200px;
+  border: 1px solid;
+  background-color: silver;
+}
+
+#nav {
+  list-style: none;
+  padding: 0;
+  background-color: white;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-size: 1.25rem;
+  color: black;
+  border: 1px solid;
+  display: block;
+  padding: 5%;
+}
+
+.nav-link:hover {
+  color: white;
+  background-color: black;
+}
+
+h1{
+  font-size: 1.5rem;
+  margin: 1%;
+  text-align: center;
+}
+
+.content {
+  min-width: 600px;
+  max-width: 800px;
+  text-align: left;
+  margin-left: 25%;
+  margin-right: 10%;
+  width: 80vw;
+}
+
+p {
+  margin-left: 1%
+}
+
+.runepage {
+  width: 600px;
+  margin-left: 5%;
+}
+
+.runeicon {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.skillorder {
+  border: 1px solid;
+  width: 600px;
+  margin-left: 5%;
+}
+
+#spells {
+  width: 150px;
+  margin-left: 5%;
+}
+
+#startingItems {
+  width: 245px;
+  margin-left: 5%;
+}
+
+#firstBackItems, #situational, .finalBuild {
+  width: 420px;
+  margin-left: 5%;
+}
+
+#coreItems, #lateGameItems, #styleItems {
+  width: 330px;
+  margin-left: 5%;
+}
+
+code {
+  display:block;
+  text-align: left;
+  white-space: pre;
+  position: relative;
+  line-height: 1.6;
+  background-color: silver;
+  padding: 5%;
+  margin: 1%;
+}
+
+iframe {
+  margin-left: 5%;
+}
+
+footer {
+  text-align: right;
+  margin-top: 10%;
+}
+
+@media only screen and (max-width: 600px) {
+  #navbar {
+  text-align: center;
+  display: block;
+  position: relative;
+  overflow-y: auto;
+  top: 0;
+  margin: 1%;
+  padding: 1%;
+  width: 320px;
+  border: 1px solid;
+  background-color: silver;
+  }
+  
+  .nav-link {
+  text-decoration: none;
+  font-size: 15px;
+  color: black;
+  border: 1px solid;
+  display: block;
+  padding: 1%;
+  }
+  
+  .runepage {
+  width: 85%;
+  margin-left: 1%;
+  }
+  
+  iframe {
+    width: 85%;
+  }
+  
+  code {
+    width: 90%;
+    padding: 1%;
+    margin: 0;
+  }
+  
+  .skillorder {
+  border: 1px solid;
+  width: 75%;
+  margin-left: 1%;
+  }
+  
+  .content {
+  text-align: left;
+  margin-left: 0;
+  width: 95%;
+  }
+}
