@@ -3,20 +3,9 @@
 
 <head>
   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Jamal's Ahri Guide - Technical Documentation Page</title>
-  
-  
-  
-      <link rel="stylesheet" href="css/style.css">
-
-  
-</head>
-
-<body>
-
-  <head>
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -32,10 +21,10 @@
       <li><a class="nav-link" href="#Teamfights">Teamfights</a></li>
     </ul>
   </nav>
-  
+
   <div class="content">
     <main id="main-doc">
-    
+
       <section class="main-section" id="Introduction">
         <header><h2>Introduction</h2></header>
           <p>This guide is for those already familiar with Ahri's basic skills and the general flow to a typical game of League of Legends. The information presented is based off patch 8.12. If you are unfamiliar with Ahri's skills, watch this video and come back to the guide. Her skills have been updated since but are conceptually the same. You can also click <a href="http://leagueoflegends.wikia.com/wiki/Ahri" target="_blank">here</a> for up to date information on Ahri.</p>
@@ -55,7 +44,7 @@
         <li>Effective roam ganker</li>
         <li>Charm crowd control versatile for peeling/escape/focus fire</li>
       </ul>
-      
+
       <p>Cons</p><ul>
         <li>Can be mana hungry if you don't manage mana well.</li>
         <li>Skill shot dependent, if her skillshots miss she does very little damage.</li>
@@ -82,7 +71,7 @@
         </ol>
       </p>
       <br>
-      
+
       <h3>Assasin Ahri Runepage</h3>
       <img class="runepage" src="https://lh3.googleusercontent.com/vlVVVrDCpk4LPl6vEduD08ayowvFOv2sj84SeoAzzK5tjf_6_5RZLrbVhupfZzTW-fXU9mJlUUHZANA5LP5fzzAwr3pmwHfyhFnIwOSQC96Kosz-vvs-HnEgzy5AgRP05ePd2-8cng=w2400">
       <p>Electrocute and cheap shot will give you high pre-level 6 combo damage. Eyeball collection will get you more damage for your takedowns. Ultimate hunter will make your R come up a lot more as the game progresses and you get more takedowns. Absolute focus and gathering storm will provide you with more AP for damage. This page centers more around playing safe during laning phase, waiting for jungle ganks, and scaling to mid game for skirmishes. Your job will ultimately to catch people out of position and eliminate them.</p>
@@ -93,7 +82,7 @@
       <li>Transcendence or Mana Flow Band for Absolute Focus-<br>As mentioned before, if you want more cdr by mid game, transcendence is the way to go. Mana Flow Band is good if you have trouble conserving your mana.</li>
     </ol>
     </p>
-    
+
     <h3>Jamal's Standard vs. Assasin Runepage</h3>
     <p>The core comparison here is between Comet and Electrocute. Using the power of Javascript, I can calculate the damage of these runes.</p>
     <h4>Electrocute Damage Calculator Function</h4>
@@ -105,10 +94,10 @@ function electrocuteDmg (Bonus_Attack_Damage, Ability_Power, Champion_Level) {
     else {
         var electrocuteDamage = (Champion_Level-1)*10 + 50 +
         (1.5*Bonus_Attack_Damage) + (1.3*Ability_Power);
-      
+
         var damagePerMinute = (electrocuteDamage*60) /
         (50 - (Champion_Level-1)*(25/17));
-      
+
         console.log(electrocuteDamage + " electrocute damage");
         console.log(damagePerMinute + " electrocute damage per minute");
     }
@@ -117,7 +106,7 @@ function electrocuteDmg (Bonus_Attack_Damage, Ability_Power, Champion_Level) {
 electrocuteDmg (0, 38, 1);
 //Lvl 1 Items for Ahri Doran Ring +15AP, Runepage Bonus +18AP,
 //absolute focus +5= 38AP
-      
+
 electrocuteDmg (40, 773, 18);
 //full build based off Jamal's Standard Build at lvl 18 + the bonuses of runes
 //+24AP 30minuts in gathering storm, +40AP Absolute focus,
@@ -139,25 +128,25 @@ function cometDmg (Bonus_Attack_Damage, Ability_Power, Champion_Level) {
     else {
         var cometDamage = (Champion_Level-1)*(70/17) + 30 +
         (1.35*Bonus_Attack_Damage) + (1.2*Ability_Power);
-      
+
         var damagePerMinute = (cometDamage*60) /
         (20 - (Champion_Level-1)*(12/17));
-      
+
         var cdrDPM = (cometDamage*60) /
         ((20 - (Champion_Level-1)*(12/17))*.72);
-      
+
         console.log(cometDamage + " comet damage");
-      
+
         console.log(damagePerMinute + " comet damage per minute");
         console.log(cdrDPM + " comet damage per minute after ability cdr");
     }
 }
 cometDmg (0, 34, 1);
 //blue tree with yellow tree +14AP, absolute focus +5AP, doran's ring +15AP=34
-      
+
 cometDmg(40, 678, 18);
 //Jamal's Standard Build 440AP,lvl 18 absolute focuse +40AP, rune tree +14AP
-//=44AP+440AP=484AP *1.4(rabadon)= 677.6AP, 
+//=44AP+440AP=484AP *1.4(rabadon)= 677.6AP,
 //keep in mind there is also the +15AP from takedowns for 10 sec that I left out
     </code>
     <p>The result is:<br>
@@ -166,11 +155,11 @@ cometDmg(40, 678, 18);
       <br>
       <strong>Lvl 18:</strong><br>967.6 comet damage<br>7257 comet damage per minute<br>10079.17 comet damage per minute after ability cdr<br><br>
       <strong>Conclusion:</strong><br>
-      At lvl 1, electrocute out damages comet by around 28 but if you add the scorch on with comet the difference is cut down to 8 damage. Comet still out damages electrocute over time by about 100. Comet is better for lane harassment but isn't as good when it comes to landing that kill burst. This is also leaving out the 1.07 multiplier for Coup de Grace. Basically if you want play all or nothing go electrocute and if you want constant damage go comet. Keep in mind this is assuming the comets hit which often they don't early on when the enemy is more aware of them.<br><br> 
+      At lvl 1, electrocute out damages comet by around 28 but if you add the scorch on with comet the difference is cut down to 8 damage. Comet still out damages electrocute over time by about 100. Comet is better for lane harassment but isn't as good when it comes to landing that kill burst. This is also leaving out the 1.07 multiplier for Coup de Grace. Basically if you want play all or nothing go electrocute and if you want constant damage go comet. Keep in mind this is assuming the comets hit which often they don't early on when the enemy is more aware of them.<br><br>
       Electrocute route will give you about 100 more AP during late game. The proc will also out damage comet by about 317 damage. This is more relevant when it comes to 100 to 0 killing someone. The caveat is that you need to land your charms and rotations or else you will have severely gimped your damage in a team fight. You also have to be precise in who you target because it takes 25 seconds to reload that electrocute. <br><br>
       You will have way more damage output over time with comet. The 8 sec cooldown at lvl 18 with 10% CDR per aoe skill, and 20% per single target skill, you'll be procing comets about every 5-6 seconds. This is more useful for prolonged team fight situations such as contesting Baron/dragons, sieging/defending towers, or just long fights in general.
     </p>
-    
+
     </section>
   <br>
   <hr>
@@ -192,7 +181,7 @@ cometDmg(40, 678, 18);
       <img id="startingItems" src="https://lh3.googleusercontent.com/9AwfrJ5tsYIb5YfizDM471kem9c7Y5dGec64t08bEw2Tf46ijFPx0AhSXCxS8N-rhodmy75M_upy6xkoWNga9KOjXsUtpLn_vfnQ1GxONxyCXScGnzEydBzsluAT9CHLp3jO0CaNmw=w2400">
       <p>Nothing fancy here, <strong>Dorans Ring</strong> and two red pots is the standard. Some may cheese with <strong>Dark Seal</strong> but it's too much of a risk and Ahri needs health.</p>
       <br>
-      
+
       <h3>First Back Items</h3>
       <img id="firstBackItems" src="https://lh3.googleusercontent.com/-Ztf6RsDenTaQfaaN-RTFfkavpE306i9VMF1LA6RJd7ycXIE2OTh2KvbeoetJwimsv-05iJ8S90j27WoP5MkJsRKEJm37IiurATcjFXyoVjzJuJeAcWj8wHqfebxWZ41nBDkrZQbyA=w2400">
       <p><strong>Lost Chapter</strong> is the most solid buy on the first back. It gives mana, CDR, and AP. This really helps Ahri sustain in lane and her damage output. Afterwards, if you can, buy boots. With any leftover gold always get at least one control ward and some red potions if you need sustain.
@@ -201,28 +190,28 @@ If you are laning against heavy AD such as Zed, Yasuo, or Talon, then getting <s
         <br><br>
 If you are agaisnt heavy AP such as LeBlanc or Fizz, getting a <strong>Null-Magic Mantle</strong> can help.</p>
       <br>
-      
+
       <h3>Core Items</h3>
       <img id="coreItems" src="https://lh3.googleusercontent.com/aZR12VUmE1EOLlWRiNVcT4BXsnu02fSs9JW8IAr7yMRake6vE_X6BCO8xjqFnuFdtt0xotp2V7rE1sogTuqVAWh1F2K0OKRZslwtnQMS7iGT7bECb6wIWMXo8alTRu_XwmdC6py0gw=w2400">
       <p><strong>Luden's Echo</strong> is a must on Ahri. The AOE proc, AP, Mana, and CDR all synergize with Ahri's kit. It also makes her wave clear much easier. Some will argue to get <strong>Morellonomicon</strong> after luden's echo but I found the item to be lackluster unless the enemy team has a ton of healing/regen.
         <br><br>
         <strong>Hextech Gunblade</strong> opens up a huge amount of Ahri's playmaking ability. The range on the slow nuke is very useful for any situation (escape, chasing, assasinating, peeling, setting up charms). The bonus vamp will also help Ahri stay in prolonged fights and make her harder to 1v1.
         <br><br>
-        <strong>Sorcerer's Boots</strong> or <strong>Ionian Boots</strong> are up to you. If the enemy team starts building more magic resistance mid-game, get sorcerer's boots. If noone is building MR, get ionian boots for more skill rotations and it is cheaper. 
+        <strong>Sorcerer's Boots</strong> or <strong>Ionian Boots</strong> are up to you. If the enemy team starts building more magic resistance mid-game, get sorcerer's boots. If noone is building MR, get ionian boots for more skill rotations and it is cheaper.
       </p>
       <br>
-      
+
       <h3>Late Game Items</h3>
       <img id="lateGameItems" src="https://lh3.googleusercontent.com/WzAmAit_xQYbqE1lsxttMBVg3_8FRfVTW1YtOjqtcaABLejEkJd4r3iB0qbU22jbOCXGmac2kcLTt987eS_fhZJnK_ZlmL4ppXDUrxgfvmdFdjfybemo_mE3kOjo8G8VtnJ6JDN_Uw=w2400">
       <p><strong>Rabadon's Deathcap</strong> is my go to if the enemy team doesn't stack MR past 100. Pure AP is great on Ahri and makes her deal tons of damage!
         <br><br>
-        <strong>Void Staff</strong> is preferrable if the enemy team builds MR past 100. It isn't needed if you can still melt the enemy damage dealers. But if tanks with high MR are tanking too hard then it might be time to get a it. 
+        <strong>Void Staff</strong> is preferrable if the enemy team builds MR past 100. It isn't needed if you can still melt the enemy damage dealers. But if tanks with high MR are tanking too hard then it might be time to get a it.
         <br><br>
         <strong>Morellonomicon</strong> is a good choice if the enemy team has a lot of healing such as Soraka, Dr. Mundo, Darius, Swain, Singed, etc. It is also good for ADC's who build vamp. The extra magic penetration is good for assasinating ADC's.
         <br><br>
         <strong>Rylai's Scepter</strong> synergizes well with cheap shot, if you got it. It's more of a utlity item for peeling/chasing. The extra health is nice and it is more useful when the enemy team has a lot of melee champs that you can kite.
       </p>
-      
+
       <h3>Situational Items</h3>
       <img id="situational" src="https://lh3.googleusercontent.com/GUEB7BEEkXINnWQo31CKDh6PnRv6ZE_aAUjCSGodFH1FbgflO9SIQDBUkZuvRUi2gw0CjZ5XKnA1sADPJV0dRvMli21skdQs0xgQkemlh9QFthNQhSDtiVaIR5mMyxyBAvJ4vTO7EA=w2400">
       <p><strong>Banshee's Veil</strong> or <strong>Abyssal Mask</strong> are good for heavy AP enemy compositions. Sometimes you would want the spell shield for those pesky Veigars or LeBlancs. Abyssal mask would be good also if your own team has a lot of AP damage to help with teamfights.
@@ -236,7 +225,7 @@ If you are agaisnt heavy AP such as LeBlanc or Fizz, getting a <strong>Null-Magi
       <br>
       <strong>Twin Shadows</strong> is more of a utility item. It can be useful if your support isn't warding and you want to be able to contest objectives. If you already have a good ADC who does lots of damage, then getting this item can be helpful in peeling for your ADC and helping the ADC chase. This item opens up a lot more pick potential. If you see a straggler, use the active and make a pick. Not the worst item to get but it does sacrifice your own burst/damage for more utility.
       </p>
-      
+
       <h3>Style Points Items</h3>
       <img id="styleItems" src="https://lh3.googleusercontent.com/Lpjcv8PvNwUlLwvjLRXvM6Ej8RMHjblv2lVI_tCU3GaqtQRywnsqjfgmWKusP6cGpYt_yKBdQhto8meyMoHaF3CYV46g7zJtDzejGVauCh60d1NQHWXLsS78DgW2uy2ohxhPcDQANg=w2400">
       <p>
@@ -249,7 +238,7 @@ If you are agaisnt heavy AP such as LeBlanc or Fizz, getting a <strong>Null-Magi
         <strong>Hextech Protobelt-01</strong> gives Ahri another dash. It actually isn't bad and provides some good extra burst and health. It falls off late game, so get it early as a first or second item if you want to style on your opponents. The extra dash is really over kill which is why Ahri doesn't really need this item, she needs lots of AP.
         <br>
         <br>
-        <strong>Liandry's Torment</strong> is a terrible item on Ahri. She is not meant to fight for a long duration. Ahri weaves in and out of fights. But if you already have a rylais and the enemy team is building pure health, this can be a cool buy. Plus it makes your charms more satisfying to hit. But seriously don't buy this on Ahri. 
+        <strong>Liandry's Torment</strong> is a terrible item on Ahri. She is not meant to fight for a long duration. Ahri weaves in and out of fights. But if you already have a rylais and the enemy team is building pure health, this can be a cool buy. Plus it makes your charms more satisfying to hit. But seriously don't buy this on Ahri.
       </p>
       <h3>Typical Final Builds</h3>
       <h4>Standard</h4>
@@ -272,7 +261,7 @@ If you are agaisnt heavy AP such as LeBlanc or Fizz, getting a <strong>Null-Magi
       <p>First I wrote all the relevant item's stat properties into an array.</p>
         <code>/*Notation for items.
 item=[AP, AD, Mana, CDR, Magic Penetration, Health, Armor, MR, Cost]*/
-          
+
 var Rylai = [90, 0, 0, 0, 0, 300, 0, 0, 2600];
 //abilities slow for 20% for 1 second
 
@@ -326,7 +315,7 @@ var APBuild = sumItems(Luden, Gunblade, Banshee, Rabadon, Voidstaff);
 var utilityBuild = sumItems(Luden, Gunblade, Twinshadows, Rylai, Rabadon);
 var popularBuild = sumItems(Luden, Morello, Rabadon, Zhonya, Voidstaff);
      </code>
-  
+
   <h4>Writing a Function to Label and Display the Stat Summations</h4>
   <p>For clarity purposes, I wrote another function to print the values of the items with the proper stat label. I then assigned the result to variables.</p>
   <code>function itemStats(item) {
@@ -353,32 +342,32 @@ console.log(APStats);
 console.log(utilityStats);
 console.log(popularBuild);</code>
       <br>
-      
+
       <h4>Results</h4>
       <p>
-        <strong>Jamal's Standard:</strong><br>(Luden's Echo, Hextech Gunblade, Rabadon's Deathcap, Void Staff, Lich Bane)<br>440 AP, 40 AD, 850 Mana, 30 CDR, 0 Magic Penetration, 0 Health, 0 Armor, 0 MR, 16050 Gold<br><br> 
-        
+        <strong>Jamal's Standard:</strong><br>(Luden's Echo, Hextech Gunblade, Rabadon's Deathcap, Void Staff, Lich Bane)<br>440 AP, 40 AD, 850 Mana, 30 CDR, 0 Magic Penetration, 0 Health, 0 Armor, 0 MR, 16050 Gold<br><br>
+
         <strong>Agaisnt Heavy AD:</strong><br>(Luden's Echo, Hextech Gunblade, Zhonya's Hourglass, Rabadon's Deathcap, Void Staff)<br>435 AP, 40 AD, 600 Mana, 30 CDR, 0 Magic Penetration, 0 Health, 45 Armor, 0 MR, 15750 Gold<br><br>
-        
+
         <strong>Agaisnt Heavy AP:</strong><br>(Luden's Echo, Hextech Gunblade, Banshee's Veil, Rabadon's Deathcap, Void Staff)<br>435 AP, 40 AD, 600 Mana, 30 CDR, 0 Magic Penetration, 0 Health, 0 Armor, 60 MR, 15850 Gold<br><br>
-        
+
         <strong>Pure Utility:</strong><br>(Luden's echo, Hextech Gunblade, Twin Shadows, Rylai's Scepter, Rabadon's Deathcap)<br>450 AP, 40 AD, 600 Mana, 30 CDR, 0 Magic Penetration, 300 Health, 0 Armor, 0 MR, 15200 Gold<br><br>
-        
+
         <strong>Most Popular Build:</strong><br>(Luden's Echo, Morellonomicon, Rabadon's Deathcap, Zhonya's Hourglass, Void Staff):<br>435 AP, 0 AD, 600 Mana, 30 CDR, 15 Magic Penetration, 300 Health, 45 Armor, 0 MR, 15350 Gold<br><br>
         Keep in mind that even though pure utility is the cheapest and yields the most AP, it doesn't include a Void Staff and will not have the 40% MR ignored in damage.
       </p>
-      
+
     </section>
 
     <section class="main-section" id="Game_Phases">
       <header><h2>Game Phases</h2></header>
       <h3>1. Laning Phase</h3>
-      <p>Laning phase is pretty straight forward. Go to the mid lane and drop a yellow trinket ward near the bottom jungle entrance to prevent lvl 1 invades. Wait for creeps to spawn and start CSing while trying to harass and deny your opponent CS. Help your jungler in river or the jungle if necessary. Push in the mid lane and see if you can roam bottom at lvl 4 and 6. It is important to keep an eye on the mini-map to see if your jungler needs help, if the enemy jungler has shown, for potential ganks bottom or if there are any missing enemies.</p> 
-      
+      <p>Laning phase is pretty straight forward. Go to the mid lane and drop a yellow trinket ward near the bottom jungle entrance to prevent lvl 1 invades. Wait for creeps to spawn and start CSing while trying to harass and deny your opponent CS. Help your jungler in river or the jungle if necessary. Push in the mid lane and see if you can roam bottom at lvl 4 and 6. It is important to keep an eye on the mini-map to see if your jungler needs help, if the enemy jungler has shown, for potential ganks bottom or if there are any missing enemies.</p>
+
       <h4>Harass/Denying Creeps</h4>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/QnyGxB4paDo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       <p>Your goal is to harass your opponent with Q when they try to get CS. They will have to decide to either get hit by the Q or miss the minion. Often it is easy to get a fadeaway Q because the enemy thinks you are backing off and aren't expecting a Q to fly out. Try to land the Q on the tip so the true damage is applied. This is much easier to do if you went my standard runepage. If you went the assasin runepage then you just want to hold out in lane and keep your distance. If you ever get a good look to charm, go for it but don't throw out charms willy nilly or you will be out of mana fast. Try to have at least half your mana bar full in case you ever need to do a full rotation of E-->W/Q+auto attack.</p>
-      
+
       <h4>Help Your Jungler</h4>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/zdVtyA9enbc" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       <p>When you are laning, keep your eyes on the jungle and river. If a fight breaks out, go help your jungler. In this clip, I was rewarded handsomely for responding with 3 kills and a double buff. Notice that when fighting, I don't stand still and continually cycle between attacking and moving. Always try to put space between yourself and the opponent. Ahri is ranged squishy champion and standing still only helps melee champions kill her faster.</p>
@@ -386,14 +375,14 @@ console.log(popularBuild);</code>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/Bs-mcPmysQA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
       <p>After every creep wave, you want to constantly monitor if you can roam to bottom. In this clip, I saw that TF went back to base which gives me the opportunity to push the lane to tower and roam bottom for a kill and opening up dragon for the taking. You can roam top as well, but bottom lane has more priority because of dragons and support and ADC are two players instead of one top lane. This is a habit you want to form when playing Ahri.</p>
       <br>
-      
+
       <h3>2. Mid Game</h3>
       <p>You want to either continue to pressure mid lane and take the tower or snowball your bottom lane. Also keep track of the dragons to make sure you are ready to go to dragon pit to secure the objective. You want to either be where the skirmishes are or pressuring mid lane towers. Keep your eyes on the mini-map so you know when you can pressure the lane and when you can roam. Dragons and rift herald are the main priority for mid game.
         <br>
         <br>
         Also you want to switch your trinket to a sweeper so you can start clearing wards, especially if you have the eyeball collector in your runepage. It is also to set up a trap bush by sweeping a bush you know the enmy will go to and waiting there to make a pick. Making picks so you can get objectives are a key way to snowball the game.</p>
       <br>
-      
+
       <h3>3. Late Game</h3>
       <p>Late game is mostly about objective control around Baron and playing teamfights right. Don't solo farm a lot. If a lane needs to be cleared, clear it quickly and don't overstay. You should be staying near the ADC to peel or be looking for potential picks in the jungle.</p>
       <h4>Make Picks</h4>
@@ -409,14 +398,10 @@ console.log(popularBuild);</code>
 
   </main>
   </div>
-  
+
   <footer>
     Images belong to &copy Riot Games Inc., Coded by &copy 2018 Kevin Li
   </footer>
-</body>
-  
-  
-
 </body>
 
 </html>
